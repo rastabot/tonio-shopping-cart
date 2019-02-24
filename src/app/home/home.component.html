@@ -1,0 +1,61 @@
+<hr>
+<h1>List of products</h1>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-3" >Quick Search</div>
+      <div class="col-sm-3"><input type="text" placeholder="Search.."></div>
+      <div class="cartinfo col-sm-6" >Cart Info</div>
+      
+    </div>
+    <div class="row">
+        <div class="col-sm-6"></div>          
+        <div class="col-sm-3"># of items</div>
+        <div class="col-sm-3">Price: $... </div>
+      </div>
+  
+</div>
+<table class="table table-bordered">  
+  <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of products">
+        <td>
+            <a  class="details" routerLink="details/{{prod.product_id}}">
+              <img src="{{prod.product_img}}" class="img-thumbnail" height="100px" width="100px" />
+            </a>
+        </td>
+        <td>{{prod.product_name}}</td>
+        <td>${{prod.product_price}}</td>
+        <td>{{prod.product_quantity}}</td>
+        <td> 
+            <button class="btn btn-success btn-xs plus" 
+                        (click)="add(list.product_id)">
+              <i class="glyphicon glyphicon-plus"></i>
+            </button>
+              <button class="btn btn-danger btn-xs minus" 
+              (click)="del(list.product_id)">
+              <i class="glyphicon glyphicon-minus">
+              </i>
+            </button>
+            </td>
+            <!-- buttons -->
+            <td>
+              <button class="btn btn-primary btn-sm view">
+                <a  class="details" routerLink="details/{{prod.product_id}}">
+                  View</a></button> &nbsp;
+                
+            <button class="btn btn-danger btn-sm" 
+            (click)="delpopup(list.product_id)">Delete</button>
+          </td>
+  </table>
+           
+
+
+ 
