@@ -1,3 +1,5 @@
+Amazon book https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175
+
 # ShopCartTwo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
